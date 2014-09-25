@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :program_members, foreign_key: 'member_id'
-  has_many :members, through: :program_members
+  has_many :programs, through: :program_members
+
+  has_many :posts, foreign_key: 'author_id'
 end
