@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :programs, through: :program_members
 
   has_many :posts, foreign_key: 'author_id'
+  has_many :post_viewers
+  has_many :viewed_posts, through: :post_viewers, foreign_key: 'viewer_id'
 end

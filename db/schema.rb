@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925084056) do
+ActiveRecord::Schema.define(version: 20140925092841) do
+
+  create_table "post_viewers", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "viewer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "post_viewers", ["post_id"], name: "index_post_viewers_on_post_id"
+  add_index "post_viewers", ["viewer_id"], name: "index_post_viewers_on_viewer_id"
 
   create_table "posts", force: true do |t|
     t.string   "title"

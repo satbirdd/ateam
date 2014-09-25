@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  after_action :set_viewer, only: [:show]
 
   # GET /posts
   # GET /posts.json
@@ -71,5 +72,11 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :content, :description)
+    end
+
+    def set_viewer
+      unless @post.author?(current_user) || @post.viewer?(current_user)
+        @post.viewers << current_user
+      end
     end
 end

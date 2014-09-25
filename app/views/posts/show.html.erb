@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>作者:</strong>
   <%= @post.author.email %>
 </p>
 
@@ -14,6 +14,10 @@
   <%= @markdown.render(@post.content).html_safe %>
 </div>
 
+<p>
+  <strong>谁读过这篇文章:</strong>
+  <%= @post.viewers.map(&:email).join(',') %>
+</p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
