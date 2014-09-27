@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :author_authenticate!, only: [:edit, :update, :destroy]
   after_action :set_viewer, only: [:show]
 
   # GET /posts
@@ -67,6 +68,12 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def author_authenticate!
+      unless @post.author?(current_user)
+        render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

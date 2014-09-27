@@ -1,0 +1,167 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "variables";
+@import "mixin";
+
+
+// 通用部分
+@include clear-border-margin-padding-default;
+
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+ul {
+  @include clear-both;
+
+  li {
+    @include float-left;
+
+    a {
+      color: white;
+      font-size: 14px;
+      @include same-hlh(50px);
+      display: block;
+      padding: 0 20px;
+      font-weight: bold;
+    }
+    &.selected a {
+      color: $navi-bg-color;
+      background-color: white;
+    }
+  }
+}
+
+#search {
+  @include float-left;
+
+  box-shadow: none;
+  font-size: 14px;
+  border: 0;
+  width: 100%;
+  width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);
+  padding: 13px 15px;
+  margin: 0;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// application layout
+.navigation {
+  $height: 50px;
+
+  // position: relative;
+  background-color: $navi-bg-color;
+  .blox {
+    margin: 0 auto;
+    width: $width;
+    height: $height;
+
+    .menu {
+      @include float-left;
+      @include half;
+    }
+
+    .setting {
+      @include float-right;
+      @include half;
+
+      span {
+        @include float-right;
+
+        a {
+          color: white;
+          display: block;
+          @include same-hlh(50px);
+        }
+      }
+    }
+  }
+}
+
+.bigshow {
+  border: 1px solid $lighter-blue;
+  margin: 50px auto;
+  width: $width - 2px;
+
+  .up {
+    h5 {
+      @include float-left;
+
+      font-weight: lighter;
+      background-color: $lighter-blue;
+      color: #82ccc6;
+      line-height: 30px;
+      padding: 10px 20px;
+    }
+    .notifer {
+      @include float-left;
+
+      font-weight: lighter;
+      line-height: 30px;
+      padding: 10px 20px;
+
+      img {
+        height: 100px;
+      }
+    }
+    .social {
+      @include float-right;
+
+      div {
+        @include float-right;
+        border-left: 1px solid $lighter-blue;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  .down {
+    padding: 20px 20px;
+    background-color: $lighter-blue;
+    position: relative;
+
+    .container {
+      background-color: white;
+
+      .ract {
+        border-top: 10px solid $lighter-blue;
+        border-left: 10px solid $lighter-blue;
+        border-right: 10px solid $lighter-blue;
+        border-bottom: 10px solid white;
+        position: absolute;
+        top: 1px;
+        left: 30px;
+      }
+    }
+  }
+}
+
+
+
+// home controller
+@import 'home.css';

@@ -7,6 +7,66 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='navigation'>
+    <div class='blox'>
+      <div class='menu'>
+        <ul>
+          <li class='selected'>
+            <a href='javascript: void(0);'>
+              最新动态
+            </a>
+          </li>
+          <li>
+            <a href='javascript: void(0);'>
+              Change Log
+            </a>
+          </li>
+          <li>
+            <a href='javascript: void(0);'>
+              博文
+            </a>
+          </li>
+          <li>
+            <a href='javascript: void(0);'>
+              讨论
+            </a>
+          </li>
+          <li>
+            <a href='javascript: void(0);'>
+              项目
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class='setting'>
+        <span>
+          <a href="javascript: void(0);">设置</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class='bigshow'>
+    <div class='up'>
+      <h5 class='search'>Search</h5>
+      <div class='notifer'>
+        <span>读万卷书 行万里路</span>
+      </div>
+      <div class='social'>
+        <div class='tweet'>
+        </div>
+        <div class='facebook'>
+        </div>
+      </div>
+      <div style='clear:both;'></div>
+    </div>
+    <div class='down'>
+      <div class='container'>
+        <span class='ract'></span>
+        <input id='search' type='text' placeholder='害怕迷路，搜索一下'>
+        <div style='clear: both;'></div>          
+      </div>
+    </div>
+  </div>
 
 <%= yield %>
 

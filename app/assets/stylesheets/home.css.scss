@@ -1,3 +1,59 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variables';
+@import 'mixin';
+
+.flow {
+  margin: 50px auto;
+  width: $width;
+}
+
+.item {
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 30px;
+
+  .up {
+    margin-bottom: 30px;
+
+    .author-avatar {
+      margin-right: 20px;
+      width: 50px;
+      height: 50px;
+      // border: 1px solid $lighter-blue;
+      @include float-left;
+
+      img {
+        @include same-hlh(50px);
+      }
+    }
+
+    .infor {
+      @include float-left;
+      width: $width - 70px;
+
+      .date {
+        font-size: 10px;
+        display: inline-block;
+        border: 1px solid #444444;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+      }
+
+      .desc {
+        font-size: 12px;
+        line-height: 12px;
+
+        .action {
+          color: gray;
+        }
+      }
+    }
+  }
+
+  .down {
+    margin-left: 70px;
+    margin-top: 30px;
+  }
+}
