@@ -40,3 +40,13 @@
   height: $height;
   line-height: $height;
 }
+
+// 三角形
+@mixin up-angle ($width, $bgcolor, $ftcolor) {
+  border: {
+    top: $width solid $bgcolor;
+    left: $width solid $bgcolor;
+    right: $width solid $bgcolor;
+    bottom: $width solid $ftcolor;
+  }
+}

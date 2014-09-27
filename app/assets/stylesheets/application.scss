@@ -149,10 +149,8 @@ ul {
       background-color: white;
 
       .ract {
-        border-top: 10px solid $lighter-blue;
-        border-left: 10px solid $lighter-blue;
-        border-right: 10px solid $lighter-blue;
-        border-bottom: 10px solid white;
+        @include up-angle(10px, $lighter-blue, white);
+
         position: absolute;
         top: 1px;
         left: 30px;
