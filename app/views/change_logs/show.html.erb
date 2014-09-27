@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @change_log.title %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @change_log.program %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @change_log.content %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @change_log.author %>
+</p>
+
+<%= link_to 'Edit', edit_change_log_path(@change_log) %> |
+<%= link_to 'Back', change_logs_path %>

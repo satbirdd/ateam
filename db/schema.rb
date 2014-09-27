@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925092841) do
+ActiveRecord::Schema.define(version: 20140927154218) do
+
+  create_table "change_logs", force: true do |t|
+    t.string   "title"
+    t.integer  "program_id"
+    t.text     "content"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "change_logs", ["author_id"], name: "index_change_logs_on_author_id"
+  add_index "change_logs", ["program_id"], name: "index_change_logs_on_program_id"
 
   create_table "post_viewers", force: true do |t|
     t.integer  "post_id"

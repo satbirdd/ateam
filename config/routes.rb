@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :change_logs
+
   resources :posts
 
   resources :programs
